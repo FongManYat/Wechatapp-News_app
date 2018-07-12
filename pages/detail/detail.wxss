@@ -1,0 +1,41 @@
+.newsDetail{
+  margin-left:20rpx;
+  margin-right:20rpx;
+  border-top: 2px solid;
+}
+
+.newsTitle{
+  margin-top: 30rpx;
+  font-size: 55rpx;
+  font-style: bold;
+  margin-bottom: 20rpx;
+}
+
+.newsSourceTime{
+  display:flex;
+}
+
+.newsSource{
+  margin-right:20rpx;
+}
+
+.detailTips{
+  display:flex;
+  opacity: 0.6;
+  justify-content: space-between;
+  font-size:30rpx;
+  margin-bottom: 40rpx;
+}
+
+.contentText{
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+
+.contentPict{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-left: 0rpx;
+  align-content: center;
+}
+

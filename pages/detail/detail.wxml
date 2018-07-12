@@ -1,0 +1,16 @@
+<view class='newsDetail'>
+  <view class='newsTitle'>{{title}}</view>
+  <view class='detailTips'>
+    <view class='newsSourceTime'>
+      <view wx:if="{{source}}"class='newsSource'>{{source}}</view>
+      <view class='newsTime'>{{time}}</view>
+    </view>
+    <view class='newsReadCount'>{{readCount}}</view>
+  </view>
+  <view wx:for="{{newsContent}}">
+    <view wx:if="{{item.contentType=='p'}}" class='contentText'>{{item.text}}</view> 
+    <image wx:if="{{item.contentType=='image'}}" src="{{item.text}}"class='contentPict'mode='aspectFit'></image>
+    <view wx:if="{{item.contentType=='imageTips'}}"class="ceontentStrong">{{item.text}}</view>
+    <view wx:if="{{item.contentType=='strong'}}"class="ceontentStrong">{{item.text}}</view>
+  </view>
+</view>

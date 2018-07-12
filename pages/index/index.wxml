@@ -1,0 +1,42 @@
+<scroll-view scroll-x>
+  <view class="menu">
+    <view wx:for="{{newsType}}"class="menuItem"bindtap="onTapNews">
+      <view  class="{{currentSelect == item.id ? 'menuType_selected':'menuType'}}"data-newstype="{{item.newstype}}"data-id="{{item.id}}">{{item.name}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<scroll-view>
+  <view wx:for="{{newsList}}" class="newsList"bindtap="onTapNewsDetail">
+    
+   
+      <block wx:if="{{index==0}}">
+        <view  style="background-image:url({{item.firstImage}});background-size:cover" class='coverNews'>
+          <view class='coverNewsTitle'data-newsid="{{item.id}}">{{item.title}}</view>
+          <view class="newsTips">
+            <view wx:if="{{item.source}}"class="newsSource">{{item.source}}</view>
+            <view class="newsTime">{{item.time}}</view>
+          </view>
+        </view>       
+      </block> 
+   
+      <block wx:if="{{index>0}}">
+       <view class="newsItem">
+        <view class="newsText">
+          <view class="newsTitle"data-newsid="{{item.id}}">{{item.title}}</view>
+          <view class="newsTips">
+            <view wx:if="{{item.source}}"class="newsSource">{{item.source}}</view>
+            <view class="newsTime">{{item.time}}</view>
+          </view>
+        </view>
+        <view class="newsIcon">
+             <image class="newsFirstImage"data-newsid="{{item.id}}"src="{{item.firstImage}}"bindload="imageLoad"style="width:{{ imagesWidth }}rpx; height:{{ imagesHeight }}rpx;"></image>
+            <image wx:if="{{!item.firstImage}}"src='../news_default.jpg'class="newsFirstImage"bindload="imageLoad"style="width:{{ imagesWidth }}rpx; height:{{ imagesHeight }}rpx;"></image>
+        </view>
+      </view>
+      </block>
+
+ 
+  </view>
+</scroll-view>
+
